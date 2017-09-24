@@ -1,12 +1,6 @@
 #!/usr/bin/env python
 
 from setuptools import setup, find_packages
-import versioneer
-versioneer.VCS = 'git'
-versioneer.versionfile_source = 'pyepm/_version.py'
-versioneer.versionfile_build = 'pyepm/_version.py'
-versioneer.tag_prefix = ''  # tags are like 1.2.0
-versioneer.parentdir_prefix = 'pyepm-'  # dirname like 'myproject-1.2.0'
 
 CONSOLE_SCRIPTS = ['pyepm=pyepm.pyepm:main']
 LONG = """
@@ -27,8 +21,7 @@ setup(name="pyepm",
           'requests'
       ],
       entry_points=dict(console_scripts=CONSOLE_SCRIPTS),
-      version=versioneer.get_version(),
-      cmdclass=versioneer.get_cmdclass(),
+      version="0.0.1",
       classifiers=[
           "Development Status :: 2 - Pre-Alpha",
           "Environment :: Console",
