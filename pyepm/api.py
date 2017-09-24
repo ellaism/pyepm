@@ -20,9 +20,13 @@ from utils import unhex
 logger = logging.getLogger(__name__)
 logging.getLogger("requests").setLevel(logging.WARNING)
 
+def hex2(n):
+    x = '%x' % (n,)
+    return '0x' + ('0' * (len(x) % 2)) + x
+
 def abi_data(sig, data):
     prefix = get_prefix(sig)
-    data_abi = hex(prefix).rstrip('L')
+    data_abi = hex2(prefix).rstrip('L')
     logger.debug("ABI prefix: %s" % data_abi)
 
     types = sig.split(':')[1][1:-1].split(',')
